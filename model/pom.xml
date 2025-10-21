@@ -63,8 +63,13 @@
 		    <version>2.40.0</version>
 		</dependency> 		
         <dependency>
-            <groupId>org.nasdanika.models.graph</groupId>
+            <groupId>org.nasdanika.models.party</groupId>
             <artifactId>model</artifactId>
+            <version>2025.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nasdanika.core</groupId>
+            <artifactId>graph-model</artifactId>
             <version>2025.10.0</version>
         </dependency>
 	</dependencies>

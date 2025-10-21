@@ -8,7 +8,8 @@ module org.nasdanika.models.process {
 	
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;
-	requires transitive org.nasdanika.models.graph;
+	requires transitive org.nasdanika.graph.model;
+	requires transitive org.nasdanika.models.party;
 	
 	provides CapabilityFactory with ProcessEPackageResourceSetCapabilityFactory;
 	

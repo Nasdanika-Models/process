@@ -1,98 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="process" nsURI="ecore://nasdanika.org/models/process" nsPrefix="org.nasdanika.models.process">
-  <eClassifiers xsi:type="ecore:EClass" name="Code">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="imports"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consumers" upperBound="-1"
+        eType="#//ResourceConsumer" eOpposite="#//ResourceConsumer/resources"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceConsumer" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" eOpposite="#//Resource/consumers"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Guardrail" eSuperTypes="#//Function"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Callback" eSuperTypes="#//Function"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Configurable" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity #//Code">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="configuration"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configMap" changeable="false"
-        volatile="true" transient="true" derived="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eGenericType>
-    </eStructuralFeatures>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//ResourceConsumer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" eOpposite="#//Role/actors"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declarations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
-        eType="#//Task" eOpposite="#//Task/tools"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
-        eType="#//Agent" eOpposite="#//Agent/tools"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//ResourceConsumer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//Actor" eOpposite="#//Actor/roles"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Configurable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backstory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
-        eType="#//Tool" eOpposite="#//Tool/agents"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="llm" eType="#//LargeLanguageModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stepCallback" eType="#//Callback"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
-        eType="#//KnowledgeSource" eOpposite="#//KnowledgeSource/agents"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
-        eType="#//Task" eOpposite="#//Task/agent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessElement">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//ConnectionTarget">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
+        <eTypeArguments eClassifier="#//ProcessElement"/>
+      </eTypeArguments>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Process">
-    <eLiterals name="sequential"/>
-    <eLiterals name="hierarchical" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Crew" eSuperTypes="#//Code ../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
-        eType="#//Tool" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
-        eType="#//Agent" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
-        eType="#//Task" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="beforeKickoff" eType="#//Function"
+  <eClassifiers xsi:type="ecore:EClass" name="Activity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="ecore:EClass ../../org.nasdanika.models.party/model/party.ecore#//Role"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="afterKickoff" eType="#//Function"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="process" eType="#//Process"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="knowledgeSources" upperBound="-1"
-        eType="#//KnowledgeSource" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="languageModels" upperBound="-1"
-        eType="#//LargeLanguageModel" containment="true" eKeys="../../org.nasdanika.ncore/model/ncore.ecore#//StringIdentity/id"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managerAgent" eType="#//Agent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managerLlm" eType="#//LargeLanguageModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCallingLlm" eType="#//LargeLanguageModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="planningLlm" eType="#//LargeLanguageModel"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="embedder" eType="#//Code"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stepCallback" eType="#//Callback"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="taskCallback" eType="#//Callback"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/activities"/>
+    <eGenericSuperTypes eClassifier="#//ResourceConsumer"/>
+    <eGenericSuperTypes eClassifier="#//ProcessElement"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Node">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
+        <eTypeArguments eClassifier="#//ProcessElement"/>
+      </eTypeArguments>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Configurable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="taskDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedOutput" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guardrail" eType="#//Guardrail"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"
-        eOpposite="#//Agent/tasks"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
-        eType="#//Tool" eOpposite="#//Tool/tasks"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-        eType="#//Task"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="callback" eType="#//Callback"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
+        eType="#//Activity" eOpposite="#//Activity/artifacts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repositories" upperBound="-1"
+        eType="#//Repository" eOpposite="#//Repository/artifacts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" eOpposite="#//Transition/outputs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requests" upperBound="-1"
+        eType="#//Call" eOpposite="#//Call/request"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responses" upperBound="-1"
+        eType="#//Call" eOpposite="#//Call/response"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LargeLanguageModel" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KnowledgeSource" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
-        eType="#//Agent" eOpposite="#//Agent/knowledgeSources"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/repositories"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Actor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Human" eSuperTypes="#//Actor ../../org.nasdanika.models.party/model/party.ecore#//Person"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Process">
+    <eGenericSuperTypes eClassifier="#//Activity"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.ncore/model/ncore.ecore#//Catalog"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//CompositeNode">
+      <eTypeArguments eClassifier="#//ProcessElement"/>
+      <eTypeArguments eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
+        <eTypeArguments eClassifier="#//ProcessElement"/>
+      </eTypeArguments>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/transitions"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
+      <eTypeArguments eClassifier="#//ProcessElement"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Call">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/requests"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="response" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/responses"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
+      <eTypeArguments eClassifier="#//ProcessElement"/>
+    </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

@@ -3,7 +3,7 @@ package org.nasdanika.models.process.util;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.nasdanika.capability.emf.EPackageCapabilityFactory;
-import org.nasdanika.models.process.CrewaiPackage;
+import org.nasdanika.models.process.ProcessPackage;
 
 public class ProcessEPackageResourceSetCapabilityFactory extends EPackageCapabilityFactory {
 
