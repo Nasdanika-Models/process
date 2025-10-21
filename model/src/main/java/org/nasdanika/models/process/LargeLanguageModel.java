@@ -1,0 +1,18 @@
+/**
+ */
+package org.nasdanika.models.process;
+
+import org.nasdanika.ncore.DocumentedNamedStringIdentity;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Large Language Model</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see org.nasdanika.models.process.CrewaiPackage#getLargeLanguageModel()
+ * @model
+ * @generated
+ */
+public interface LargeLanguageModel extends DocumentedNamedStringIdentity {
+} // LargeLanguageModel
