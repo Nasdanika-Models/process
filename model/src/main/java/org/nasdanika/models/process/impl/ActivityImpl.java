@@ -39,8 +39,8 @@ import org.nasdanika.models.process.ProcessPackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getSemanticMappings <em>Semantic Mappings</em>}</li>
- *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getIncomingConnections <em>Incoming Connections</em>}</li>
  *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getOutgoingConnections <em>Outgoing Connections</em>}</li>
+ *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getIncomingConnections <em>Incoming Connections</em>}</li>
  *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link org.nasdanika.models.process.impl.ActivityImpl#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
@@ -149,10 +149,10 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 		switch (featureID) {
 			case ProcessPackage.ACTIVITY__SEMANTIC_MAPPINGS:
 				return ((InternalEList<?>)getSemanticMappings()).basicRemove(otherEnd, msgs);
-			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
-				return ((InternalEList<?>)getIncomingConnections()).basicRemove(otherEnd, msgs);
 			case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS:
 				return ((InternalEList<?>)getOutgoingConnections()).basicRemove(otherEnd, msgs);
+			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
+				return ((InternalEList<?>)getIncomingConnections()).basicRemove(otherEnd, msgs);
 			case ProcessPackage.ACTIVITY__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ProcessPackage.ACTIVITY__ARTIFACTS:
@@ -171,10 +171,10 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 		switch (featureID) {
 			case ProcessPackage.ACTIVITY__SEMANTIC_MAPPINGS:
 				return getSemanticMappings();
-			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
-				return getIncomingConnections();
 			case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS:
 				return getOutgoingConnections();
+			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
+				return getIncomingConnections();
 			case ProcessPackage.ACTIVITY__ROLES:
 				return getRoles();
 			case ProcessPackage.ACTIVITY__ARTIFACTS:
@@ -196,13 +196,13 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 				getSemanticMappings().clear();
 				getSemanticMappings().addAll((Collection<? extends SemanticMapping>)newValue);
 				return;
-			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
-				getIncomingConnections().clear();
-				getIncomingConnections().addAll((Collection<? extends Connection<ProcessElement>>)newValue);
-				return;
 			case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS:
 				getOutgoingConnections().clear();
 				getOutgoingConnections().addAll((Collection<? extends Connection<ProcessElement>>)newValue);
+				return;
+			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
+				getIncomingConnections().clear();
+				getIncomingConnections().addAll((Collection<? extends Connection<ProcessElement>>)newValue);
 				return;
 			case ProcessPackage.ACTIVITY__ROLES:
 				getRoles().clear();
@@ -227,11 +227,11 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 			case ProcessPackage.ACTIVITY__SEMANTIC_MAPPINGS:
 				getSemanticMappings().clear();
 				return;
-			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
-				getIncomingConnections().clear();
-				return;
 			case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS:
 				getOutgoingConnections().clear();
+				return;
+			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
+				getIncomingConnections().clear();
 				return;
 			case ProcessPackage.ACTIVITY__ROLES:
 				getRoles().clear();
@@ -253,10 +253,10 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 		switch (featureID) {
 			case ProcessPackage.ACTIVITY__SEMANTIC_MAPPINGS:
 				return !getSemanticMappings().isEmpty();
-			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
-				return !getIncomingConnections().isEmpty();
 			case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS:
 				return !getOutgoingConnections().isEmpty();
+			case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS:
+				return !getIncomingConnections().isEmpty();
 			case ProcessPackage.ACTIVITY__ROLES:
 				return !getRoles().isEmpty();
 			case ProcessPackage.ACTIVITY__ARTIFACTS:
@@ -283,24 +283,24 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 				default: return -1;
 			}
 		}
-		if (baseClass == ConnectionTarget.class) {
-			switch (derivedFeatureID) {
-				case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS: return org.nasdanika.graph.model.ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == ProcessElement.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ConnectionSource.class) {
 			switch (derivedFeatureID) {
 				case ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS: return org.nasdanika.graph.model.ModelPackage.CONNECTION_SOURCE__OUTGOING_CONNECTIONS;
 				default: return -1;
 			}
 		}
+		if (baseClass == ConnectionTarget.class) {
+			switch (derivedFeatureID) {
+				case ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS: return org.nasdanika.graph.model.ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS;
+				default: return -1;
+			}
+		}
 		if (baseClass == Node.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ProcessElement.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -326,24 +326,24 @@ public class ActivityImpl extends ResourceConsumerImpl implements Activity {
 				default: return -1;
 			}
 		}
-		if (baseClass == ConnectionTarget.class) {
-			switch (baseFeatureID) {
-				case org.nasdanika.graph.model.ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS: return ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == ProcessElement.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ConnectionSource.class) {
 			switch (baseFeatureID) {
 				case org.nasdanika.graph.model.ModelPackage.CONNECTION_SOURCE__OUTGOING_CONNECTIONS: return ProcessPackage.ACTIVITY__OUTGOING_CONNECTIONS;
 				default: return -1;
 			}
 		}
+		if (baseClass == ConnectionTarget.class) {
+			switch (baseFeatureID) {
+				case org.nasdanika.graph.model.ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS: return ProcessPackage.ACTIVITY__INCOMING_CONNECTIONS;
+				default: return -1;
+			}
+		}
 		if (baseClass == Node.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ProcessElement.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

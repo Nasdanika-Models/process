@@ -3,7 +3,7 @@
 package org.nasdanika.models.process;
 
 import org.nasdanika.graph.model.Connection;
-import org.nasdanika.graph.model.ConnectionTarget;
+import org.nasdanika.graph.model.Node;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +15,5 @@ import org.nasdanika.graph.model.ConnectionTarget;
  * @model
  * @generated
  */
-public interface ProcessElement extends ConnectionTarget<Connection<ProcessElement>> {
+public interface ProcessElement extends Node<Connection<ProcessElement>> {
 } // ProcessElement

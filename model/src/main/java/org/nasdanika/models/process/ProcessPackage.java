@@ -638,7 +638,7 @@ public interface ProcessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_ELEMENT__ID = ModelPackage.CONNECTION_TARGET__ID;
+	int PROCESS_ELEMENT__ID = ModelPackage.NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Mappings</b></em>' containment reference list.
@@ -647,7 +647,16 @@ public interface ProcessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_ELEMENT__SEMANTIC_MAPPINGS = ModelPackage.CONNECTION_TARGET__SEMANTIC_MAPPINGS;
+	int PROCESS_ELEMENT__SEMANTIC_MAPPINGS = ModelPackage.NODE__SEMANTIC_MAPPINGS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_ELEMENT__OUTGOING_CONNECTIONS = ModelPackage.NODE__OUTGOING_CONNECTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
@@ -656,7 +665,7 @@ public interface ProcessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_ELEMENT__INCOMING_CONNECTIONS = ModelPackage.CONNECTION_TARGET__INCOMING_CONNECTIONS;
+	int PROCESS_ELEMENT__INCOMING_CONNECTIONS = ModelPackage.NODE__INCOMING_CONNECTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -665,7 +674,7 @@ public interface ProcessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_ELEMENT_FEATURE_COUNT = ModelPackage.CONNECTION_TARGET_FEATURE_COUNT + 0;
+	int PROCESS_ELEMENT_FEATURE_COUNT = ModelPackage.NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -674,7 +683,7 @@ public interface ProcessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_ELEMENT_OPERATION_COUNT = ModelPackage.CONNECTION_TARGET_OPERATION_COUNT + 0;
+	int PROCESS_ELEMENT_OPERATION_COUNT = ModelPackage.NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.process.impl.ActivityImpl <em>Activity</em>}' class.
@@ -804,22 +813,22 @@ public interface ProcessPackage extends EPackage {
 	int ACTIVITY__SEMANTIC_MAPPINGS = RESOURCE_CONSUMER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__INCOMING_CONNECTIONS = RESOURCE_CONSUMER_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing Connections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__OUTGOING_CONNECTIONS = RESOURCE_CONSUMER_FEATURE_COUNT + 2;
+	int ACTIVITY__OUTGOING_CONNECTIONS = RESOURCE_CONSUMER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__INCOMING_CONNECTIONS = RESOURCE_CONSUMER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -1601,15 +1610,6 @@ public interface ProcessPackage extends EPackage {
 	int PROCESS__SEMANTIC_MAPPINGS = ACTIVITY__SEMANTIC_MAPPINGS;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS__INCOMING_CONNECTIONS = ACTIVITY__INCOMING_CONNECTIONS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing Connections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1617,6 +1617,15 @@ public interface ProcessPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESS__OUTGOING_CONNECTIONS = ACTIVITY__OUTGOING_CONNECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connections</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__INCOMING_CONNECTIONS = ACTIVITY__INCOMING_CONNECTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.

@@ -202,12 +202,12 @@ public class ProcessAdapterFactory extends AdapterFactoryImpl {
 				return createGraphElementAdapter();
 			}
 			@Override
-			public <C extends Connection<?>> Adapter caseConnectionTarget(ConnectionTarget<C> object) {
-				return createConnectionTargetAdapter();
-			}
-			@Override
 			public <C extends Connection<?>> Adapter caseConnectionSource(ConnectionSource<C> object) {
 				return createConnectionSourceAdapter();
+			}
+			@Override
+			public <C extends Connection<?>> Adapter caseConnectionTarget(ConnectionTarget<C> object) {
+				return createConnectionTargetAdapter();
 			}
 			@Override
 			public <C extends Connection<?>> Adapter caseNode(Node<C> object) {

@@ -18,25 +18,18 @@
         eType="#//Actor" eOpposite="#//Actor/roles"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessElement">
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//ConnectionTarget">
-      <eTypeArguments eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
-        <eTypeArguments eClassifier="#//ProcessElement"/>
-      </eTypeArguments>
-    </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Activity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-        eType="ecore:EClass ../../org.nasdanika.models.party/model/party.ecore#//Role"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
-        eType="#//Artifact" eOpposite="#//Artifact/activities"/>
-    <eGenericSuperTypes eClassifier="#//ResourceConsumer"/>
-    <eGenericSuperTypes eClassifier="#//ProcessElement"/>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Node">
       <eTypeArguments eClassifier="ecore:EClass ../../org.nasdanika.graph.model/model/graph.ecore#//Connection">
         <eTypeArguments eClassifier="#//ProcessElement"/>
       </eTypeArguments>
     </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//ResourceConsumer #//ProcessElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="ecore:EClass ../../org.nasdanika.models.party/model/party.ecore#//Role"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+        eType="#//Artifact" eOpposite="#//Artifact/activities"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//DocumentedNamedStringIdentity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"

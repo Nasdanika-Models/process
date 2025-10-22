@@ -1,0 +1,210 @@
+{
+  "references/eClassifiers/Activity/references/eStructuralFeatures/artifacts/index.html": {
+    "path": "Activity/References/artifacts",
+    "link-uuid": "8d20c178-c174-40f3-81f8-fccc6e390386",
+    "title": "artifacts",
+    "content": "Type Artifact Multiplicity 0..*",
+    "timestamp": 1761130183916
+  },
+  "references/eClassifiers/Repository/inheritance.html": {
+    "path": "Repository/Inheritance",
+    "link-uuid": "5f550766-6f3e-4f2d-aead-12f28d60099e",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184110
+  },
+  "references/eClassifiers/ResourceConsumer/inheritance.html": {
+    "path": "ResourceConsumer/Inheritance",
+    "link-uuid": "55696ecb-c451-40b0-aec2-b53fbebdde1a",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1761130184153
+  },
+  "references/eClassifiers/Activity/inheritance.html": {
+    "path": "Activity/Inheritance",
+    "link-uuid": "47cbab87-4d16-4d8c-82bd-99aaf121a3e3",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1761130183910
+  },
+  "references/eClassifiers/Call/inheritance.html": {
+    "path": "Call/Inheritance",
+    "link-uuid": "53fb77b8-6b96-4ec0-a1f7-a1b3bf950311",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184032
+  },
+  "references/eClassifiers/Process/inheritance.html": {
+    "path": "Process/Inheritance",
+    "link-uuid": "6b316699-588e-48e5-bf0d-387e33cec824",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184074
+  },
+  "references/eClassifiers/ResourceConsumer/references/eStructuralFeatures/resources/index.html": {
+    "path": "ResourceConsumer/References/resources",
+    "link-uuid": "0afbe2f3-96ab-4a93-8c31-908b1d672472",
+    "title": "resources",
+    "content": "Type Resource Multiplicity 0..*",
+    "timestamp": 1761130184157
+  },
+  "references/eClassifiers/Artifact/references/eStructuralFeatures/transitions/index.html": {
+    "path": "Artifact/References/transitions",
+    "link-uuid": "b449e0b2-70e7-4d6c-b4a7-0aa5bb8a15a0",
+    "title": "transitions",
+    "content": "Type Transition Multiplicity 0..*",
+    "timestamp": 1761130184007
+  },
+  "references/eClassifiers/Artifact/inheritance.html": {
+    "path": "Artifact/Inheritance",
+    "link-uuid": "2a531f66-dee6-45f5-baeb-b8379d73d847",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130183994
+  },
+  "references/eClassifiers/Human/inheritance.html": {
+    "path": "Human/Inheritance",
+    "link-uuid": "3a351e8e-4e49-4f7e-8566-eb1fc4ed471d",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184057
+  },
+  "references/eClassifiers/Artifact/references/eStructuralFeatures/activities/index.html": {
+    "path": "Artifact/References/activities",
+    "link-uuid": "0a7782e1-6584-428b-ae90-8a539fdf2f8e",
+    "title": "activities",
+    "content": "Type Activity Multiplicity 0..*",
+    "timestamp": 1761130183998
+  },
+  "references/eClassifiers/Activity/references/eStructuralFeatures/roles/index.html": {
+    "path": "Activity/References/roles",
+    "link-uuid": "01b07c04-30be-407a-98a5-e7f980bed9c2",
+    "title": "roles",
+    "content": "Type Role Multiplicity 0..*",
+    "timestamp": 1761130183919
+  },
+  "references/eClassifiers/Call/references/eStructuralFeatures/request/index.html": {
+    "path": "Call/References/request",
+    "link-uuid": "bd9fb25f-8d76-4f6b-9543-8f70e130b361",
+    "title": "request",
+    "content": "Type Artifact Multiplicity 0..*",
+    "timestamp": 1761130184037
+  },
+  "references/eClassifiers/Repository/references/eStructuralFeatures/artifacts/index.html": {
+    "path": "Repository/References/artifacts",
+    "link-uuid": "67acd17c-418d-41ab-b740-07cf748cb52c",
+    "title": "artifacts",
+    "content": "Type Artifact Multiplicity 0..*",
+    "timestamp": 1761130184114
+  },
+  "index.html": {
+    "link-uuid": "34946302-945b-4d8f-96d5-79ba3a91fcf2",
+    "title": "Process Model",
+    "content": "&hellip; Repository Repository is a type of resource which stores artifacts Stored In Artifact Artifacts are inputs/outputs of process activities and can also be used by a process activity Resource Resource is something used by actors to work on an activity or activities. Resources can be associated with actors, roles and activities. Agent An agent is an automated actor Role A role has specific responsibilities in activity completion. Multiple roles collaborate to complete an activity. An actor plays a role in completing an activity. One actor may play several roles. Plays Actor Actors play roles in completing activities Human Process Process is a composite activity Consumes Produces Activity Uses Resource Consumer Process",
+    "timestamp": 1761130183886
+  },
+  "references/eClassifiers/Artifact/references/eStructuralFeatures/repositories/index.html": {
+    "path": "Artifact/References/repositories",
+    "link-uuid": "0a8087e3-d561-4aee-ac73-c70e552e23e4",
+    "title": "repositories",
+    "content": "Type Repository Multiplicity 0..*",
+    "timestamp": 1761130184000
+  },
+  "references/eClassifiers/Call/references/eStructuralFeatures/response/index.html": {
+    "path": "Call/References/response",
+    "link-uuid": "0bf472dd-54ca-4179-9fee-6ed27be3e140",
+    "title": "response",
+    "content": "Type Artifact Multiplicity 0..*",
+    "timestamp": 1761130184039
+  },
+  "references/eClassifiers/Transition/references/eStructuralFeatures/outputs/index.html": {
+    "path": "Transition/References/outputs",
+    "link-uuid": "85b8bf6e-c52f-4d67-9207-4a8fdbe8286e",
+    "title": "outputs",
+    "content": "Type Artifact Multiplicity 0..*",
+    "timestamp": 1761130184194
+  },
+  "references/eClassifiers/Agent/index.html": {
+    "link-uuid": "b4130000-e093-4c48-ab00-b1fb66d7b1e1",
+    "title": "Agent",
+    "content": "&hellip;",
+    "timestamp": 1761130183966
+  },
+  "references/eClassifiers/ProcessElement/inheritance.html": {
+    "path": "ProcessElement/Inheritance",
+    "link-uuid": "b6c7548b-dd4c-47d6-8e24-d91b11140f34",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1761130184090
+  },
+  "references/eClassifiers/Agent/inheritance.html": {
+    "path": "Agent/Inheritance",
+    "link-uuid": "5dcf4821-89d5-4362-b9b6-a017a84d490e",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130183968
+  },
+  "references/eClassifiers/Resource/inheritance.html": {
+    "path": "Resource/Inheritance",
+    "link-uuid": "1bad62b4-4448-4e71-b344-29e9ea32cad9",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1761130184129
+  },
+  "references/eClassifiers/Actor/references/eStructuralFeatures/roles/index.html": {
+    "path": "Actor/References/roles",
+    "link-uuid": "31a470dd-53ee-4448-8cf0-4a733772f237",
+    "title": "roles",
+    "content": "Type Role Multiplicity 0..*",
+    "timestamp": 1761130183945
+  },
+  "references/eClassifiers/Transition/inheritance.html": {
+    "path": "Transition/Inheritance",
+    "link-uuid": "7beeb964-4e0c-4e3f-9cb9-f07eebf281f9",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184191
+  },
+  "references/eClassifiers/Role/references/eStructuralFeatures/actors/index.html": {
+    "path": "Role/References/actors",
+    "link-uuid": "95c7d5b9-ba8b-446f-a711-02d87f51be68",
+    "title": "actors",
+    "content": "Type Actor Multiplicity 0..*",
+    "timestamp": 1761130184176
+  },
+  "references/eClassifiers/Artifact/references/eStructuralFeatures/responses/index.html": {
+    "path": "Artifact/References/responses",
+    "link-uuid": "4dedc489-8c1f-4db7-b28c-e71f9d56a94c",
+    "title": "responses",
+    "content": "Type Call Multiplicity 0..*",
+    "timestamp": 1761130184004
+  },
+  "references/eClassifiers/Resource/references/eStructuralFeatures/consumers/index.html": {
+    "path": "Resource/References/consumers",
+    "link-uuid": "e1f18bb4-e829-445b-97eb-fadbeb6ff477",
+    "title": "consumers",
+    "content": "Type ResourceConsumer Multiplicity 0..*",
+    "timestamp": 1761130184134
+  },
+  "references/eClassifiers/Artifact/references/eStructuralFeatures/requests/index.html": {
+    "path": "Artifact/References/requests",
+    "link-uuid": "36026b60-1ec6-4e67-9d6a-a41d77d406e5",
+    "title": "requests",
+    "content": "Type Call Multiplicity 0..*",
+    "timestamp": 1761130184002
+  },
+  "references/eClassifiers/Role/inheritance.html": {
+    "path": "Role/Inheritance",
+    "link-uuid": "99c593d8-1dde-4a88-8fbe-b156679704c7",
+    "title": "Inheritance",
+    "content": "Supertypes ",
+    "timestamp": 1761130184173
+  },
+  "references/eClassifiers/Actor/inheritance.html": {
+    "path": "Actor/Inheritance",
+    "link-uuid": "bce6046b-3a8f-4e38-88f5-ef9d3eefa6dd",
+    "title": "Inheritance",
+    "content": "Supertypes Subtypes  ",
+    "timestamp": 1761130183940
+  }
+}

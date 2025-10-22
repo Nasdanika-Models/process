@@ -3,10 +3,6 @@
 package org.nasdanika.models.process;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.nasdanika.graph.model.Connection;
-import org.nasdanika.graph.model.Node;
-
 import org.nasdanika.models.party.Role;
 
 /**
@@ -26,7 +22,7 @@ import org.nasdanika.models.party.Role;
  * @model
  * @generated
  */
-public interface Activity extends ResourceConsumer, ProcessElement, Node<Connection<ProcessElement>> {
+public interface Activity extends ResourceConsumer, ProcessElement {
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.models.party.Role}.
